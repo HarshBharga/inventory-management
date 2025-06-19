@@ -1,0 +1,43 @@
+{
+  "info": {
+    "name": "Inventory API",
+    "_postman_id": "your-unique-id",
+    "description": "API for managing Products and Stock",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Stock Balance",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/products/1/stock-balance",
+          "host": ["{{base_url}}"],
+          "path": ["api", "products", "1", "stock-balance"]
+        }
+      }
+    },
+   {
+  "name": "Get Stock History (with filters)",
+  "request": {
+    "method": "GET",
+    "header": [],
+    "url": {
+      "raw": "{{base_url}}/api/stock-history?product_id=1&stock_type=in&start_date=2024-01-01&end_date=2025-06-19",
+      "host": ["{{base_url}}"],
+      "path": ["api", "stock-history"],
+      "query": [
+        { "key": "product_id", "value": "1" },
+        { "key": "stock_type", "value": "in" },
+        { "key": "start_date", "value": "2024-01-01" },
+        { "key": "end_date", "value": "2025-06-19" }
+      ]
+    }
+  }
+}
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://127.0.0.1:8000" }
+  ]
+}
